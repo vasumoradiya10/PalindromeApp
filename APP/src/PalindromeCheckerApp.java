@@ -1,20 +1,40 @@
 import java.util.Scanner;
-public static void main(String[] args) {
+import java.util.Stack;
 
-    // Hardcoded string
-    String word = "racecar";
+public class UseCase5PalindromeCheckerApp {
 
-    // Convert String to Character Array
-    char[] charArray = word.toCharArray();
+    public static void main(String[] args) {
 
-    // Variable to track palindrome status
-    boolean isPalindrome = true;
+        Scanner sc = new Scanner(System.in);
 
-    // Compare characters from both ends
-    for (int i = 0; i < charArray.length / 2; i++) {
-        if (charArray[i] != charArray[charArray.length - 1 - i]) {
-            isPalindrome = false;
-            break;
+        System.out.print("Enter a string: ");
+        String word = sc.nextLine();
+
+        // Create Stack
+        Stack<Character> stack = new Stack<>();
+
+        // Push characters into stack
+        for (int i = 0; i < word.length(); i++) {
+            stack.push(word.charAt(i));
         }
+
+        boolean isPalindrome = true;
+
+        // Pop and compare
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) != stack.pop()) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        // Print result
+        if (isPalindrome) {
+            System.out.println(word + " is a Palindrome.");
+        } else {
+            System.out.println(word + " is NOT a Palindrome.");
+        }
+
+        sc.close();
     }
 }
