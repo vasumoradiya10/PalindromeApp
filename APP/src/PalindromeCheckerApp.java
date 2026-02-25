@@ -2,8 +2,9 @@ import java.util.Scanner;
 public static void main(String[] args) {
 
     // Hardcoded string
-    String word = "racecar";
-
+    String word ;
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter Text");
     // Convert String to Character Array
     char[] charArray = word.toCharArray();
 
