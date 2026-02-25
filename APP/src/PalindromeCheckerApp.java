@@ -3,8 +3,9 @@ import java.util.Scanner;
 public static void main(String[] args) {
 
     // Hardcoded string (String Literal)
-    String word = "madam";
-
+    String word ;
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter Text");
     // Reverse the string using StringBuilder's reverse() method
     String reversed = new StringBuilder(word).reverse().toString();
 
