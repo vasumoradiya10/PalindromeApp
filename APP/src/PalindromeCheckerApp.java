@@ -1,18 +1,20 @@
 import java.util.Scanner;
-
 public static void main(String[] args) {
 
-    // Hardcoded string (String Literal)
-    String word = "madam";
+    // Hardcoded string
+    String word = "racecar";
 
-    // Reverse the string using StringBuilder's reverse() method
-    String reversed = new StringBuilder(word).reverse().toString();
+    // Convert String to Character Array
+    char[] charArray = word.toCharArray();
 
-    // Check if original and reversed strings are equal
-    if (word.equals(reversed)) {
-        System.out.println(word + " is a Palindrome.");
-    } else {
-        System.out.println(word + " is NOT a Palindrome.");
+    // Variable to track palindrome status
+    boolean isPalindrome = true;
+
+    // Compare characters from both ends
+    for (int i = 0; i < charArray.length / 2; i++) {
+        if (charArray[i] != charArray[charArray.length - 1 - i]) {
+            isPalindrome = false;
+            break;
+        }
     }
-}
 }
